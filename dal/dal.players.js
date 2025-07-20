@@ -1,4 +1,4 @@
-import supabase from "../db/conection/connectSupabase.js";
+import supabase from "../db/connection/connectSupabase.js";
 
 export const dalPlayers = {
     async getAllPlayers() {

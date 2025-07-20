@@ -1,4 +1,4 @@
-import { connection } from "../db/conection/connectMongoDB.js";
+import { connection } from "../db/connection/connectMongoDB.js";
 
 export const dalRiddles = {
     async getRiddles() {
