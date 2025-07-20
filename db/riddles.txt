@@ -1,8 +1,20 @@
 [
   {
-    "id": "1",
-    "name": "first riddle",
+    "id": 1,
+    "name": "Update riddle",
     "taskDescription": "how am i?",
-    "correctAnswer": "dan"
+    "correctAnswer": "dan hemed"
+  },
+  {
+    "id": 2,
+    "name": "Minister",
+    "taskDescription": "Who is the Prime Minister of the USA?",
+    "correctAnswer": "doland tramp"
+  },
+  {
+    "id": 3,
+    "name": "new riddle",
+    "taskDescription": "what shoes do i like?",
+    "correctAnswer": "nike"
   }
 ]

@@ -20,6 +20,7 @@ export class CRUD {
 
         const exists = items.some(i => Number(i.id) == Number(newItem.id));
         if (!exists) {
+            newItem.id = Number(newItem.id);
             items.push(newItem);
         } else {
             console.log(`The id already exists!`);
