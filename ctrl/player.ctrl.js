@@ -4,7 +4,7 @@ const crudPlayer = new CRUD("./db/players.txt");
 
 export const getAllPlayersServer = async (req, res) => {
     try {
-        res.json(await crudRiddle.GetAll())
+        res.json(await crudPlayer.GetAll())
     } catch (err) {
         res.status(500).json({ error: `from get all players server ${err.message}` })
     }
@@ -12,8 +12,8 @@ export const getAllPlayersServer = async (req, res) => {
 
 export const createNewPlayerServer = async (req, res) => {
     try {
-        const newRiddle = await crudRiddle.Create({ ...req.body });
-        res.status(201).json(newRiddle);
+        const newPlayer = await crudPlayer.Create({ ...req.body });
+        res.status(201).json(newPlayer);
     } catch (err) {
         res.status(500).json({ error: `from create new player server ${err.message}` });
     }
@@ -24,8 +24,8 @@ export const updatePlayerServer = async (req, res) => {
     if (!id) return res.status(400).json({ error: 'Missing id' });
 
     try {
-        const updateRiddle = await crudRiddle.Update(id, { id, ...req.body });
-        res.json(updateRiddle);
+        const updatePlayer = await crudPlayer.Update(id, { id, ...req.body });
+        res.json(updatePlayer);
     } catch (err) {
         res.status(404).json({ error: `from update player server ${err.message}` });
     }
@@ -36,8 +36,8 @@ export const deletePlayerServer = async (req, res) => {
     if (!id) return res.status(400).json({ error: 'Missing id' });
 
     try {
-        const deleteRiddle = await crudRiddle.Delete(req.params.id);
-        res.json(deleteRiddle);
+        const deletePlayer = await crudPlayer.Delete(req.params.id);
+        res.json(deletePlayer);
     } catch (err) {
         res.status(404).json({ error: `from update player server ${err.message}` });
     }
