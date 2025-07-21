@@ -1,7 +1,7 @@
 export default class Player {
     constructor(name) {
         this.name = name;
-        this.times = [];
+        this.bestTime = 0;
     }
 
     recordTime(start, end) {

@@ -8,7 +8,7 @@ export const dalRiddles = {
     },
     async insertRiddle(riddle) {
         const db = await connection();
-        return db.collection('riddles').inserOne(riddle);
+        return db.collection('riddles').insertOne(riddle);
     },
     async updateRiddle(id, riddle) {
         const db = await connection();
