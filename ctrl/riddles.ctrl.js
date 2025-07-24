@@ -18,11 +18,11 @@ export const createNewRiddleServer = async (req, res) => {
 }
 
 export const updateRiddleServer = async (req, res) => {
-    const id = Number(req.params.id);
+    const id = req.params.id;
     if (!id) return res.status(400).json({ error: 'Missing id' });
 
     try {
-        const updateRiddle = await dalRiddles.updateRiddle(id, { id, ...req.body });
+        const updateRiddle = await dalRiddles.updateRiddle(id, { ...req.body });
         res.json(updateRiddle);
     } catch (err) {
         res.status(404).json({ error: `from update riddle server ${err.message}` });
@@ -30,7 +30,7 @@ export const updateRiddleServer = async (req, res) => {
 }
 
 export const deleteRiddleServer = async (req, res) => {
-    const id = Number(req.params.id);
+    const id = req.params.id;
     if (!id) return res.status(400).json({ error: 'Missing id' });
 
     try {

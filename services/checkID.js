@@ -6,8 +6,8 @@ export async function checkID(allItems) {
         return null;
     }
     while (true) {
-        const id = Number(MenuId());
-        const exists = allItems.some(item => item.id == id);
+        const id = MenuId();
+        const exists = allItems.some(item => item._id == id);
         if (!exists) {
             console.log(`ID NOT FOUND! TRY AGAIN!`);
             continue;

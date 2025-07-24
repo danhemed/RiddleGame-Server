@@ -9,7 +9,7 @@ let db;
 export async function connection() {
     if (!db) {
         await client.connect();
-        db = client.db('Riddle_Game');
+        db = client.db('riddle_game');
         console.log(`Connected to MongoDB`);
     }
     return db;

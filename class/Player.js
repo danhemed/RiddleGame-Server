@@ -1,6 +1,6 @@
 export default class Player {
-    constructor(name) {
-        this.name = name;
+    constructor(username) {
+        this.username = username;
         this.bestTime = 0;
     }
 
