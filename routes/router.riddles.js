@@ -1,5 +1,5 @@
 import express from "express";
-import { getAllRiddlesServer, createNewRiddleServer, updateRiddleServer, deleteRiddleServer } from "../ctrl/riddles.ctrl.js";
+import { getAllRiddlesServer, createNewRiddleServer, updateRiddleServer, deleteRiddleServer } from "../ctrl/ctrl.riddles.js";
 
 const router = express.Router();
 

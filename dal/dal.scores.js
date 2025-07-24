@@ -1,23 +1,23 @@
 import supabase from "../db/connection/connectSupabase.js";
 
 export const dalScores = {
-    async getAllPlayers() {
+    async getAllScores() {
         const { data, error } = await supabase
-            .from('players_scores')
+            .from('player_scores')
             .select('*')
         if (error) throw error;
         return data;
     },
-    async insertNewPlayer(data) {
+    async insertNewScore(data) {
         const { data: result, error } = await supabase
-            .from('players_scores')
+            .from('player_scores')
             .insert([data])
         if (error) throw error;
         return result;
     },
-    async updatePlayer(id, data) {
+    async updateScore(id, data) {
         const { data: result, error } = await supabase
-            .from('players_scores')
+            .from('player_scores')
             .update(data)
             .eq('id', id)
         if (error) throw error;
