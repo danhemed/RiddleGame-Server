@@ -22,7 +22,7 @@ export const updatePlayerServer = async (req, res) => {
     if (!id) return res.status(400).json({ error: 'Missing id' });
 
     try {
-        const updatePlayer = await dalPlayers.updatePlayer(id, { id, ...req.body });
+        const updatePlayer = await dalPlayers.updatePlayer(id, { ...req.body });
         res.json(updatePlayer);
     } catch (err) {
         res.status(404).json({ error: `from update player server ${err.message}` });
