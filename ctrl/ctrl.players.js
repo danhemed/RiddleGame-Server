@@ -8,6 +8,27 @@ export const getAllPlayersServer = async (req, res) => {
     }
 }
 
+export const getPlayerServer = async (req, res) => {
+    const username = String(req.params.username);
+    if (!username) return res.status(400).json({ error: 'Missing username' });
+    try {
+        res.json(await dalPlayers.getPlayerByUserName(username))
+    } catch (err) {
+        res.status(500).json({ error: `from get all players server ${err.message}` })
+    }
+}
+
+export const getPlayerWins = async (req, res) => {
+    const id = Number(req.params.id);
+    if (!id) return res.status(400).json({ error: 'Missing id' });
+    
+    try {
+        res.json(await dalPlayers.getVictories(id))
+    } catch (err) {
+        res.status(500).json({ error: `from get all players server ${err.message}` })
+    }
+}
+
 export const createNewPlayerServer = async (req, res) => {
     try {
         const newPlayer = await dalPlayers.insertNewPlayer({ ...req.body });

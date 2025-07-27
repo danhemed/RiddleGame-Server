@@ -1,8 +1,18 @@
 import { dalScores } from "../dal/dal.scores.js";
 
-export const getAllScoresServer = async (req, res) => {
+export const getAllPlayersScoreServer = async (req, res) => {
     try {
-        res.json(await dalScores.getAllScores())
+        res.json(await dalScores.getAllPlayersScore())
+    } catch (err) {
+        res.status(500).json({ error: `from get all Scores server ${err.message}` })
+    }
+}
+export const getAllPlayerScoreServer = async (req, res) => {
+    const id = Number(req.params.id);
+    if (!id) return res.status(400).json({ error: 'Missing id' });
+
+    try {
+        res.json(await dalScores.getAllPlayerScore(id))
     } catch (err) {
         res.status(500).json({ error: `from get all Scores server ${err.message}` })
     }
